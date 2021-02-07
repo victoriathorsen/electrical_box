@@ -1,0 +1,16 @@
+<%# <p><form action="/welcome">
+    <button type="submit">Back to Homepage</button></form>
+    tried to get attatched to home page %>
+<p><a href="/submissions/new">Add Story</a>
+    <%# <button type="submit">Add Story</button></a></p> %>
+<p><%= @error %></p>
+<h1>Stories</h1>
+<p><% @submissions.each do |submission| %>
+        <h3><a href="/submissions/<%= submission.id%>"> <%= submission.title%></a> </h3> 
+        <h4><%= submission.story%></h4>
+        <h6><%=submission.created_at%></h6>
+ <% end %>
+        <%# if the current user created it only they can edit otherwise dont show it to them %>
+
+
+         

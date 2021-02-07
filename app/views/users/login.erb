@@ -1,0 +1,9 @@
+<h2>Log In</h2>
+<p><%= @error %></p>
+<p> If you don't have an account, sign up here: <a href= "/signup">Sign Up</a>
+<form action="/login" method="post">
+    Username:<input type="text" name="username"><br>
+    Password:<input type="password" name="password"><br>
+    <input type="submit" value="Log In">
+</form>
+

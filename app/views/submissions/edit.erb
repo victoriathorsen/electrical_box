@@ -1,0 +1,10 @@
+<h1>Edit Submission for <%= @submission.title %> </h1>
+<p><%= @error %></p>
+<form action="/submissions/<%= @submission.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label>Title</label>
+    <input type="text" name="submission[title]" value="<%= @submission.title %>"><br>
+    <label>Story</label>
+    <textarea name="submission[story]"><%= @submission.story %></textarea>
+    <button type="submit">Edit Story</button>
+</form>  

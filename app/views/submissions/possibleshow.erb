@@ -1,0 +1,16 @@
+  
+<p><% Submission.all.each do |submission|%>
+    <%= submission.created_at%><br><br>
+<h1><%=submission.title%></h1>
+<h2><%= submission.story%></h2>
+
+    <% if submission.user && session[:user_id] == submission.user.id %>
+        <p><form action="/submissions/<%= @submission.id %>/edit">
+            <button type="submit">Edit Story</button></form>
+        <form action ="/submissions/<%= @submission.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">Delete Story</button></form></p> 
+    <% end %></p>
+<% end %>
+<form action="/submissions">
+        <button type="submit">Go back</button></form>

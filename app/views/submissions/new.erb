@@ -1,0 +1,9 @@
+<h1>Create a Story</h1>
+<p><%= @error %></p>
+<form action="/submissions" method="post">
+    <label>Title</label>
+        <input type="text" name="title"><br><br>
+    <label>Story</label>
+        <textarea name="story"></textarea><br>
+        <button type="submit">Submit</button>
+</form> 
