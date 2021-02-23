@@ -1,9 +1,23 @@
-<h2>Log In</h2>
-<p><%= @error %></p>
-<p> If you don't have an account, sign up here: <a href= "/signup">Sign Up</a>
-<form action="/login" method="post">
-    Username:<input type="text" name="username"><br>
-    Password:<input type="password" name="password"><br>
-    <input type="submit" value="Log In">
-</form>
+<link rel="stylesheet" href="/stylesheets/4_login.css" />
+<div class="main-body">
+    <div class= "log-in-form">
+        <h2 id="login-header">Log In</h2><br>
+
+        <div class="error-msg">
+            <%= @error %>
+        </div>
+        <p>
+            <form action="/login" method="post">
+                <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username"><br>
+                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password"><br><br>
+                <input type="submit" class="login_btn" value="Login" id="login-form-submit">
+            </form><br>
+        </p>
+        <div class="sign-up">
+            <p>
+                If you don't have an account, sign up here: <a href= "/signup">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</div>
 

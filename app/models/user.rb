@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
     has_many :submissions
-    validates :email, :username, uniqueness: true, presence: true
-    validates :password, length: { in: 6..20 }
-    # has_secure_password 
+    has_many :comments
+    has_secure_password
+    validates :password, length: { minimum: 6}
+    validates :email, uniqueness: true, presence: true
+    validates :username, uniqueness: true, presence: true
 end

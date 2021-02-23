@@ -13,16 +13,33 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  def logged_in?
-    !!current_user
+  helpers do
+
+    def user_saved
+        
+    end
+
+    def logged_in?
+      !!current_user
+    end
+
+    def current_user
+      User.find_by(id: session[:user_id]) 
+    end
+
+    def current_submission
+      @submission = Submission.find_by(id: params[:submission_id])
+    end
+
+    def require_user_login
+      unless logged_in?
+        redirect '/login'
+      end
+    end
+
+    def flash_welcome
+      flash[:welcome] = "Welcome, current_user"
+    end
+
   end
-
-  def current_user
-    User.find_by(id: session[:user_id])
-  end
-
-  # def user_wrote_this
-  #   respond_with Submission.create(params.merge(user_id: current_user.id))
-  # end
-
 end

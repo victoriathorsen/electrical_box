@@ -1,0 +1,72 @@
+body {
+    background-color: rgb(237, 237, 237)
+}
+
+
+.create-story ul {
+    padding: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+    list-style-type: none;
+};
+
+.create-story li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.create-story a {
+    text-decoration: none;
+    color:rgb(71, 130, 11);
+}
+
+.create-story a:link {
+    color:rgb(71, 130, 11);
+}  
+
+.create-story a:visited {
+    color:rgb(71, 130, 11);
+
+} 
+
+.create-story a:hover {
+    color:rgb(71, 130, 11);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(71, 130, 11);
+}  
+
+.create-story a:active {
+    color:#000;
+}
+
+.stories {
+    padding: 10px;
+    margin-left: 28px;
+    height: 90%;
+    width: 80%;
+    float: left;
+    text-decoration: none;
+}
+
+.stories li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 80%;
+    border-style: solid;
+    border-color: rgb(220, 220, 220);
+}
+
+.stories a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.stories a:hover {
+    color:rgb(0, 0, 0);
+    transform: scale(1.1);
+}  

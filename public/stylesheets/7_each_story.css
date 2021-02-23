@@ -1,0 +1,146 @@
+/* 
+input[type="button"], input[type="submit"] {
+    text-decoration: none;
+    border-style: solid;
+    border-width : 1px 1px 1px 1px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-color: rgb(164, 164, 164);
+    background-color: rgb(198, 198, 198);
+    border-radius: 28px;
+}
+
+input[type="button"], input[type="submit"]:hover {
+    background-color: rgb(248, 255, 44);
+    border-color: rgb(55, 55, 55);
+    color: black;
+} */
+
+
+.go-back a {
+    padding: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(71, 130, 11);
+}
+
+.go-back a:link {
+    color:rgb(71, 130, 11);
+}  
+
+.go-back a:visited {
+    color:rgb(71, 130, 11);
+} 
+
+.go-back a:hover {
+    color:rgb(71, 130, 11);
+    text-decoration: underline;
+    text-decoration-color: rgb(71, 130, 11);
+}  
+
+.go-back a:active {
+    color:rgb(71, 130, 11);
+}
+
+.submit-btn {
+    border-style: solid;
+    border-width : 1px 1px 1px 1px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-color: rgb(164, 164, 164);
+    background-color: rgb(198, 198, 198);
+    border-radius: 28px;
+}
+
+.submit-btn:hover {
+    background-color: rgb(248, 255, 44);
+    border-color: rgb(55, 55, 55);
+    color: black;
+}
+
+.each-story {
+    height: 30%;
+    padding: 15px;
+} 
+
+.story-info {
+    width: 70%;
+    padding: 20px;
+    margin-left: 15px;
+    border-style: solid;
+    border-color: rgb(220, 220, 220);
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.edit-options {
+    margin-bottom: 15px;
+    margin-left: 2%;
+    margin-right: 8px;
+} 
+
+
+
+.comment_on_submission {
+    width: 70%;
+    padding: 20px;
+    margin-top: 2%;
+    margin-left: 30px;
+    border-style: solid;
+    border-color: rgb(220, 220, 220);
+    background-color: rgb(255, 255, 255);
+}
+
+.comment-creator {
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.comment-creator p {
+    /* width: 70%;
+    margin-top: 10px;
+    margin-left: 20px; */
+    float: left;
+}
+
+.log-in-to-comment {
+    margin-top: 13px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+} 
+
+.right {
+    float: left;
+}
+
+.left {
+    float: left;
+}
+
+/* .comments {
+    height: auto;
+} */
+
+
+.each-comment {
+    background-color: rgb(255, 255, 255);
+} 
+
+.each-comment ul {
+    margin: 25px; 
+    padding: 20px;
+} 
+
+.each-comment li {
+    list-style-type: none;
+    border-style: none; 
+} 
+
+
+
+

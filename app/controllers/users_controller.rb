@@ -10,14 +10,18 @@ class UsersController < ApplicationController
         # long enough password
         # no blank info 
         user = User.new(params)
-        user.save
-        session[:user_id] = user.id
-        redirect '/submissions'
+        if user.save
+            session[:user_id] = user.id 
+            redirect '/submissions'
+        else
+            @error = user.errors.full_messages
+            erb :'/users/signup'
+        end
     end
 
     # users can delete account
 
-    delete '/user/:id' do
+    delete '/users/:id' do
         user = User.find(params[:id])
         user.destroy
         redirect '/submissions'

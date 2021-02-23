@@ -1,9 +1,16 @@
-<h1>Create a Story</h1>
-<p><%= @error %></p>
-<form action="/submissions" method="post">
-    <label>Title</label>
-        <input type="text" name="title"><br><br>
-    <label>Story</label>
-        <textarea name="story"></textarea><br>
-        <button type="submit">Submit</button>
-</form> 
+<link rel="stylesheet" href="/stylesheets/5_new_submission.css" />
+<div class="page-info">
+    <h1>Create a Post</h1><br>
+    <p>
+        <%= @error %>
+    </p>
+</div>
+<div class="write-post">
+    <p>
+        <form action="/submissions" method="post">
+            <input type="text" maxlength="100" name="title" placeholder="Title"><br><br>
+            <textarea maxlength="600" name="story" placeholder="Story"></textarea><br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form> 
+    </p>
+</div>

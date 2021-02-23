@@ -1,0 +1,32 @@
+.main-body {
+    padding: 80px;
+    text-align: center;
+    height: 80%;
+}
+
+.sign-up-form {
+    padding: 50px;
+    align-content: center;
+    text-align: center;
+    height: 40%;
+}
+
+.signup_btn {
+    border-style: solid;
+    border-width : 1px 1px 1px 1px;
+    text-decoration : none;
+    padding : 6px;
+    border-color: rgb(210, 210, 210);
+    background-color: rgb(191, 191, 191);
+    border-radius: 28px
+}
+
+.signup_btn:hover {
+    background-color: rgb(71, 130, 11);
+    border-color: rgb(26, 76, 5);
+    color: rgb(255, 255, 255);
+  }
+
+input{
+    color: black;
+}

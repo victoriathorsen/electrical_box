@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/stylesheets/5_new_submission.css" />
+<div class="page-info">
+    <h1>Write your Comment</h1>
+    <p>
+        <%= @error %>
+    </p>
+</div>
+<div class="write-comment">
+    <p>
+        <form action="/submissions/:submission_id/comments" method="post">
+            <input type="name" maxlength="100" name="name" placeholder="Title"><br><br>
+            <textarea maxlength="600" name="comment" placeholder="Comment"></textarea><br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form> 
+    </p>
+</div>

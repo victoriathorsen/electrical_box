@@ -1,8 +1,18 @@
-<h2>Create an Account</h2>
-<p><%= @error %></p>
-<form action="/signup" method="post">
-    Username:<input type="text" name="username"><br>
-    Password:<input type="password" name="password"><br>
-    Email:<input type="text" name="email"><br>
-    <input type="submit" value="Sign Up">
-</form>
+<link rel="stylesheet" href="/stylesheets/3_signup.css" />
+<div class="main-body">
+    <div class= "sign-up-form">  
+        <h2 id="login-header"><br>Create an Account</h2><br>
+        <p>
+            <%= @error %>
+        </p>
+
+        <p>
+            <form action="/signup" method="post">
+                <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username"><br>
+                <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password"><br>
+                <input type="text" name="email" id="email-field" class="login-form-field" placeholder="Email"><br><br>
+                <input type="submit" class="signup_btn" value="Create Account" id="login-form-submit">
+            </form>
+        </p>
+    </div>
+</div>

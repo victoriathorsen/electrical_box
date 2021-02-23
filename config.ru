@@ -7,6 +7,7 @@ require './config/environment'
 
 
 use Rack::MethodOverride
+use CommentsController
 use SessionsController
 use UsersController
 use SubmissionsController

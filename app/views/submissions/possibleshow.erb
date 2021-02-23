@@ -14,3 +14,47 @@
 <% end %>
 <form action="/submissions">
         <button type="submit">Go back</button></form>
+
+
+
+
+
+         <div class="comment_on_submission">
+            <div class= "comment-creater">
+                <% if logged_in? %>
+                    <div class= "form-comment">
+                        <form action="/submissions/<%= @submission.id %>/comments" method="post">
+    
+                            <textarea maxlength="600" name="comment" placeholder="Leave a comment"></textarea><br>
+                            <button type="submit" class="submit-btn"><h5>Submit</h5></button>
+                        </form><br>
+                    </div>
+                <% else %>
+                    <div class= "log-in-to-comment">
+                        Log in or sign up to leave a comment
+                        <div class= "right">
+                            <form action="/login">
+                            <button type="submit">Log In</button></form>
+                        </div>
+                        <div class= "left">
+                            <form action="/signup">
+                            <button type="submit">Sign Up</button></form><br>
+                        </div>
+                    </div>
+                <% end %>
+        </div>
+        <div class= "comments-section">
+            <div class="comments">
+                <% @submission.comments.reverse.each do |comment| %>
+                    <a href="/submissions/<% @submission.id%>/comments/<%= comment.id %>">
+                    <ul class="each-comment">
+                        <li>
+                            <br><h6>Posted by <%= comment.user.username %> at <%= comment.created_at%></h6><br>
+                            <h4><%= comment.comment%></h4><br>
+                        </li>
+                    </ul>
+                <% end %>
+            </div>
+        </div>
+    </div>
+

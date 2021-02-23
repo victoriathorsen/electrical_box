@@ -1,16 +1,37 @@
 <%# <p><form action="/welcome">
     <button type="submit">Back to Homepage</button></form>
     tried to get attatched to home page %>
-<p><a href="/submissions/new">Add Story</a>
-    <%# <button type="submit">Add Story</button></a></p> %>
-<p><%= @error %></p>
-<h1>Stories</h1>
-<p><% @submissions.each do |submission| %>
-        <h3><a href="/submissions/<%= submission.id%>"> <%= submission.title%></a> </h3> 
-        <h4><%= submission.story%></h4>
-        <h6><%=submission.created_at%></h6>
- <% end %>
-        <%# if the current user created it only they can edit otherwise dont show it to them %>
+<link rel="stylesheet" href="/stylesheets/2_submission.css" />
+<div class="create-story">
+    <ul class="create-story">
+        <li>
+            <% if logged_in?%>
+                <strong>Welcome, <%= current_user.username %>!</strong>
+            <% end %>
+        </li><br>
+        <li>
+            <a href="/submissions/new">Create a Post</a><br>
+        </li>
+    </ul>
+    <%= @error %>
+</div><br>
+<div class="stories">
+    <h2>Stories</h2><br>
+        <% @submissions.each do |submission| %>
+            <a href="/submissions/<%= submission.id%>">
+                <div>
+                    <ul class="each-story">
+                        <li>
+                            <h5>Posted by <%= submission.user.username %> at <%= submission.created_at %></h5><br>
+                            <h2><%= submission.title%></h2><br>
+                            <h4><%= submission.story%></h4><br>
+                        </li>
+                    </ul>
+                <div>
+            </a>
+        <% end %>  
+        
+</div>
 
-
+<%# Submitted by <%= submission.user.username %>  
          

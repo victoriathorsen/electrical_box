@@ -1,19 +1,78 @@
-<p><%= @submission.created_at%><br><br>
-<h1><%=@submission.title%></h1>
-<h2><%= @submission.story%></h2>
-<form action="/submissions">
-<button type="submit">Go back</button></form></p>
+<link rel="stylesheet" href="/stylesheets/7_each_story.css" />
+    <div class="grid-container"">
+        <div class="each-story">
+            <div class= "go-back">
+                <a href="/submissions">Go Back</a><br>
+            </div><br>
+            <%# <form action="/submissions">
+                
+            </form><br> %>
+            <div class= "story-info">
+                <h5>Posted by <%= @submission.user.username %> at <%= @submission.created_at%></h5><br>
+                <h2><%=@submission.title%></h2><br>
+                <h4><%= @submission.story%></h4>
+            </div>
+            <div class= "edit-options">
+                <% if logged_in? && @submission.user_id == current_user.id %>
+                    <form action="/submissions/<%= @submission.id %>/edit">
+                        <button type="submit"><h6>Edit Story</h6></button>
+                    </form>
+                    <form action ="/submissions/<%= @submission.id %>" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <button type="submit"><h6>Delete Story</h6></button>
+                    </form>
+                <% end %>
+            </div>
+        </div>
+        <div class="comment_on_submission">
+            <div class= "comment-creater">
+                <% if logged_in? %>
+                    <div class= "form-comment">
+                        <form action="/submissions/<%= @submission.id %>/comments" method="post">
+    
+                            <textarea maxlength="600" name="comment" placeholder="Leave a comment"></textarea><br>
+                            <button type="submit" class="submit-btn"><h5>Submit</h5></button>
+                        </form><br>
+                    </div>
+                <% else %>
+                    <div class= "log-in-to-comment">
+                        Log in or sign up to leave a comment
+                        <div>
+                        <form action="/login">
+                            <button type="submit">Log In</button></form>
+                        <form action="/signup">
+                            <button type="submit">Sign Up</button></form><br>
+                    </div>
+                <% end %>
+        </div>
+        <div class= "comments-section">
+            <div class="comments">
+                    <%# <a href="/submissions/<%= @submission.id/<% comment.id "> %>
+                <% @submission.comments.reverse.each do |c| %>
+                    <ul class="each-comment">
+                        <li>
+                            <br><h6>Posted by <%= c.user.username %> at <%= c.created_at%></h6><br>
+                            <h4> <%= c.comment%> </h4><br>
+                            <div class ="edit-comments">
+                                <% if logged_in? && c.user_id == current_user.id %>
+                                    <form action ="/submissions/<% @submission.id%>/comments/<%= c.id %>" method="post">
+                                        <input type="hidden" name="_method" value="delete">
+                                        <button type="submit"><h6>Delete Comment</h6></button>
+                                    </form>
+                                <% end %>
+                            </div>
+                        </li>
+                    </ul>
+                <% end %>
+                
+            </div>
+        </div>
+    </div>
 
-<% if @submission.user.id == current_user.id %>
-    <form action="/submissions/<%= @submission.id %>/edit">
-        <button type="submit">Edit Story</button></form>
-    <form action ="/submissions/<%= @submission.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button type="submit">Delete Story</button>
-    </form>
-<% end %>
 
-<%# current_user == @submission.user_id %>
+
+
+
 
 
   

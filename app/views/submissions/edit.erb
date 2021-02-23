@@ -1,10 +1,18 @@
-<h1>Edit Submission for <%= @submission.title %> </h1>
-<p><%= @error %></p>
-<form action="/submissions/<%= @submission.id%>" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label>Title</label>
-    <input type="text" name="submission[title]" value="<%= @submission.title %>"><br>
-    <label>Story</label>
-    <textarea name="submission[story]"><%= @submission.story %></textarea>
-    <button type="submit">Edit Story</button>
-</form>  
+<link rel="stylesheet" href="/stylesheets/6_edit_submission.css" />
+<div class="page-info">
+    <h1>Edit Submission for <%= @submission.title %> </h1><br>
+    <p>
+        <%= @error %>
+    </p>
+</div>
+<div class="edit-post">
+    <p>
+        <form action="/submissions/<%= @submission.id%>" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <form action="/submissions/<%= @submission.id%>" method="post">
+            <input type="text" maxlength="100" name="submission[title]"  value="<%= @submission.title %>"<br><br>
+            <textarea maxlength="600" name="submission[story]"><%= @submission.story %></textarea><br><br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>  
+    </p>
+</div>

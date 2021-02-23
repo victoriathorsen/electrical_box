@@ -1,0 +1,16 @@
+
+
+ <div class= "story-info">
+        <h5>Posted by <%= @comment.user.username %> at <%= @comment.created_at%></h5><br>
+        <h2><%=@comment.comment</h2><br>
+</div>
+
+<div class ="edit-comments">
+    <% if logged_in? && @comment.user_id == current_user.id %>
+        <form action ="/submissions/<%= @submission.id%>/comments/comment.id" method="post">
+         <%# submissions/:submission_id/comments/:id %>
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit"><h6>Delete Comment</h6></button>
+        </form>
+   <% end %>
+</div>
